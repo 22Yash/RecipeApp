@@ -1,6 +1,6 @@
 
 
-# 🍲 Recipe Book App
+# 🍲 Recipe App
 
 
 ## 📂 Project Structure
