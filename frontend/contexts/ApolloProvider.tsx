@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, ApolloProvider as ApolloProviderBase } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "http://192.168.0.102:4000/graphql",
+  uri: "https://recipeapp-backend-xsx1.onrender.com/graphql",
   cache: new InMemoryCache(),
 });
 
