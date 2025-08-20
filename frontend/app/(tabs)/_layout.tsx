@@ -3,6 +3,7 @@ import Entypo from '@expo/vector-icons/Entypo';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Feather from '@expo/vector-icons/Feather';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 
 export default function RootLayout() {
@@ -27,11 +28,11 @@ export default function RootLayout() {
           }}
     />
     <Tabs.Screen 
-          name="recipe" 
+          name="add" 
           options={{
-            title:"Search",
+            title:"Add",
             tabBarIcon:({color})=>(
-              <AntDesign name="search1" size={24} color={color} />
+              <FontAwesome6 name="add" size={24} color={color} />
             ),
             }}
     />
