@@ -4,6 +4,8 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Feather from '@expo/vector-icons/Feather';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import {Spacer } from "tamagui";
+
 
 
 export default function RootLayout() {
@@ -36,13 +38,9 @@ export default function RootLayout() {
             ),
             }}
     />
-    <Tabs.Screen 
-          name="save" 
-          options={{
-            title:"Save",
-            tabBarIcon:({color})=>(
-              <FontAwesome name="bookmark" size={24} color={color} />
-            )}}/>
+   
+            
+
 
   </Tabs>;
 }

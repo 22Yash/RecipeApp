@@ -5,13 +5,14 @@ interface CategoryCardProps {
   title: string;
   icon: string;
   active?: boolean;
+  onPress: (title: string) => void;
 }
 
-export default function CategoryCard({ title, icon, active = false }: CategoryCardProps) {
+export default function CategoryCard({ title, icon, active = false, onPress }: CategoryCardProps) {
   return (
     <Button
       unstyled
-      onPress={() => {}}
+      onPress={() => onPress(title)}
       padding="$0"
     >
       <YStack

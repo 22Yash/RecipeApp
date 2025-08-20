@@ -15,6 +15,21 @@ export const GET_RECIPES = gql`
   }
 `;
 
+export const GET_RECIPE_BY_ID = gql`
+  query GetRecipeById($id: ID!) {
+    getRecipeById(id: $id) {
+      id
+      title
+      category
+      notes
+      ingredients
+      steps
+      image
+      createdAt
+    }
+  }
+`;
+
 export const ADD_RECIPE = gql`
   mutation AddRecipe(
     $title: String!

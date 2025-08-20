@@ -8,6 +8,7 @@ import RecipeCard from "../../components/RecipeCard";
 
 export default function HomeScreen({ toggleTheme }: { toggleTheme: () => void }) {
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   // fetch recipes
   const { data, loading, error } = useQuery(GET_RECIPES);
@@ -30,10 +31,29 @@ export default function HomeScreen({ toggleTheme }: { toggleTheme: () => void })
 
   const recipes = data?.getRecipes || [];
 
-  // optional: filter by search
-  const filteredRecipes = recipes.filter((r: any) =>
-    r.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // filtering logic
+  let filteredRecipes = recipes;
+
+  if (selectedCategory !== "All") {
+    filteredRecipes = filteredRecipes.filter((r: any) =>
+      r.category?.toLowerCase() === selectedCategory.toLowerCase()
+    );
+  }
+
+  if (searchQuery) {
+    filteredRecipes = filteredRecipes.filter((r: any) =>
+      r.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
+
+  const categories = [
+    { title: "All", icon: "⭐" },
+    { title: "Breakfast", icon: "🥞" },
+    { title: "Lunch", icon: "🍱" },
+    { title: "Dessert", icon: "🧁" },
+    { title: "Noodles", icon: "🍜" },
+    { title: "Fruits", icon: "🍎" },
+  ];
 
   return (
     <YStack flex={1} backgroundColor="$background">
@@ -98,11 +118,15 @@ export default function HomeScreen({ toggleTheme }: { toggleTheme: () => void })
           </H3>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <XStack space="$3">
-              <CategoryCard title="Breakfast" icon="🥞" active />
-              <CategoryCard title="Lunch" icon="🍱" />
-              <CategoryCard title="Dessert" icon="🧁" />
-              <CategoryCard title="Noodles" icon="🍜" />
-              <CategoryCard title="Fruits" icon="🍎" />
+              {categories.map((c) => (
+                <CategoryCard
+                  key={c.title}
+                  title={c.title}
+                  icon={c.icon}
+                  active={selectedCategory === c.title}
+                  onPress={setSelectedCategory}
+                />
+              ))}
             </XStack>
           </ScrollView>
         </YStack>
@@ -120,9 +144,10 @@ export default function HomeScreen({ toggleTheme }: { toggleTheme: () => void })
               filteredRecipes.map((recipe: any) => (
                 <RecipeCard
                   key={recipe.id}
+                  id={recipe.id}
                   title={recipe.title}
                   image={recipe.image || "https://picsum.photos/200/150"}
-                  time="20 min" // You can extend schema to include time/difficulty later
+                  time="20 min"
                   rating="4.5"
                   difficulty="Easy"
                 />

@@ -1,0 +1,4 @@
+{
+    "/recipes/:id/notes": "/notes?recipeId=:id"
+  }
+  

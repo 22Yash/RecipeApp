@@ -4,12 +4,14 @@ import config from "../theme/tamagui.config";
 import { useState } from "react";
 import { Sun, Moon } from "@tamagui/lucide-icons";
 import ApolloProvider from "../contexts/ApolloProvider"; // ✅ your Apollo wrapper
+import ReactQueryProvider from "@/contexts/ReactQueryProvider";
 
 export default function RootLayout() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   return (
     <ApolloProvider>
+       <ReactQueryProvider>
       <TamaguiProvider config={config}>
         <Theme name={theme}>
           <YStack flex={1} backgroundColor="$background" padding="$4">
@@ -30,6 +32,7 @@ export default function RootLayout() {
           </YStack>
         </Theme>
       </TamaguiProvider>
+      </ReactQueryProvider>
     </ApolloProvider>
   );
 }

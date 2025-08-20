@@ -1,7 +1,9 @@
 // components/RecipeCard.tsx
 import { YStack, XStack, Text, Image, Button } from "tamagui";
+import { useRouter } from "expo-router";
 
 interface RecipeCardProps {
+  id: string;
   title: string;
   image: string;
   time: string;
@@ -11,6 +13,7 @@ interface RecipeCardProps {
 }
 
 export default function RecipeCard({ 
+  id,
   title, 
   image, 
   time, 
@@ -18,13 +21,15 @@ export default function RecipeCard({
   difficulty, 
   horizontal = false 
 }: RecipeCardProps) {
+  const router = useRouter();
+
+  const handlePress = () => {
+    router.push(`/recipe/${id}`);
+  };
+
   if (horizontal) {
     return (
-      <Button
-        unstyled
-        onPress={() => {}}
-        padding="$0"
-      >
+      <Button unstyled onPress={handlePress} padding="$0">
         <YStack
           backgroundColor="$card"
           borderRadius="$4"
@@ -72,11 +77,7 @@ export default function RecipeCard({
   }
 
   return (
-    <Button
-      unstyled
-      onPress={() => {}}
-      padding="$0"
-    >
+    <Button unstyled onPress={handlePress} padding="$0">
       <XStack
         backgroundColor="$card"
         borderRadius="$4"
@@ -93,11 +94,7 @@ export default function RecipeCard({
           borderRadius="$3"
         />
         <YStack flex={1} space="$1">
-          <Text
-            fontSize="$4"
-            fontWeight="600"
-            color="$color"
-          >
+          <Text fontSize="$4" fontWeight="600" color="$color">
             {title}
           </Text>
           <XStack alignItems="center" space="$3">
