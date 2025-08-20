@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.dokeyash.RecipeApp"
     },
     "web": {
       "bundler": "metro",
@@ -39,7 +40,12 @@
       "typedRoutes": true
     },
     "extra": {
-      "NOTES_API_URL": "http://192.168.0.102:4001" 
-    }
+      "NOTES_API_URL": "http://192.168.0.102:4001",
+      "router": {},
+      "eas": {
+        "projectId": "ae13bc74-329d-48f8-9a7d-6e8f7e656c53"
+      }
+    },
+    "owner": "dokeyash"
   }
 }
