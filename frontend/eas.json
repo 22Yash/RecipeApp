@@ -1,46 +1,18 @@
 {
-    "expo": {
-      "name": "RecipeApp",
-      "slug": "recipeapp",
-      "version": "1.0.0",
-      "orientation": "portrait",
-      "icon": "./assets/icon.png",
-      "splash": {
-        "image": "./assets/splash.png",
-        "resizeMode": "contain",
-        "backgroundColor": "#ffffff"
+    "cli": {
+      "version": ">= 3.0.0"
+    },
+    "build": {
+      "development": {
+        "developmentClient": true,
+        "distribution": "internal"
       },
-      "updates": {
-        "fallbackToCacheTimeout": 0
+      "preview": {
+        "distribution": "internal"
       },
-      "assetBundlePatterns": [
-        "**/*"
-      ],
-      "ios": {
-        "supportsTablet": true,
-        "bundleIdentifier": "com.yash.recipeapp"
-      },
-      "android": {
-        "package": "com.yash.recipeapp",
-        "permissions": [
-          "INTERNET",
-          "READ_EXTERNAL_STORAGE",
-          "WRITE_EXTERNAL_STORAGE",
-          "CAMERA"
-        ],
-        "adaptiveIcon": {
-          "foregroundImage": "./assets/adaptive-icon.png",
-          "backgroundColor": "#FFFFFF"
-        },
-        "usesCleartextTraffic": true,
-        "versionCode": 1
-      },
-      "web": {
-        "favicon": "./assets/favicon.png"
-      },
-      "extra": {
-        "eas": {
-          "projectId": "YOUR_PROJECT_ID"
+      "production": {
+        "android": {
+          "buildType": "apk"
         }
       }
     }
