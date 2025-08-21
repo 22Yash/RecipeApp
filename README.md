@@ -183,5 +183,3 @@ eas login
 
 
 ---
-
-Would you like me to also **add diagrams** (like architecture flow or folder structure visuals) inside this README for better clarity, or keep it text-based?
