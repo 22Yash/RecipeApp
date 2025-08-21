@@ -14,12 +14,14 @@ export default function CategoryCard({ title, icon, active = false, onPress }: C
       unstyled
       onPress={() => onPress(title)}
       padding="$0"
+      backgroundColor="$card"
     >
       <YStack
         alignItems="center"
         space="$2"
         padding="$3"
         minWidth={80}
+        
       >
         <YStack
           alignItems="center"
@@ -27,7 +29,7 @@ export default function CategoryCard({ title, icon, active = false, onPress }: C
           width={60}
           height={60}
           borderRadius="$4"
-          backgroundColor={active ? "$green" : "$card"}
+          backgroundColor={active ? "$gray" : "$card"}
           borderWidth={active ? 0 : 1}
           borderColor="$borderColor"
         >

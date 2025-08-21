@@ -8,7 +8,7 @@ import {Spacer } from "tamagui";
 
 
 
-export default function RootLayout() {
+export default function RootLayout({ toggleTheme }: { toggleTheme: () => void }) {
   return  <Tabs screenOptions={{
     tabBarActiveTintColor :"green", 
     
@@ -16,6 +16,8 @@ export default function RootLayout() {
     tabBarStyle: {
       marginBottom:16, // Add padding to move icons up from bottom
       height: 60, // Adjust total tab bar height
+      backgroundColor:"$background"
+      
       
     },
     }} >

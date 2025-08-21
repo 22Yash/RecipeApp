@@ -87,7 +87,7 @@ export default function EditRecipeScreen() {
   };
 
   return (
-    <ScrollView style={{ flex: 1 }} marginTop={60}>
+    <ScrollView style={{ flex: 1 }} paddingTop={60} backgroundColor="$background">
       <YStack padding="$4" space="$3">
         <H2>Edit Recipe</H2>
 

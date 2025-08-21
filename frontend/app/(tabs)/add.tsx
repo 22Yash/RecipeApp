@@ -94,7 +94,7 @@ export default function AddRecipeScreen() {
                 fontWeight="600" 
                 color="$color"
               >
-                Recipe Title
+                Recipe Title :
               </Text>
               <Text fontSize="$4" color="$red10">*</Text>
             </XStack>
@@ -131,7 +131,7 @@ export default function AddRecipeScreen() {
                 fontWeight="600" 
                 color="$color"
               >
-                Category
+                Category :
               </Text>
               <Text fontSize="$4" color="$red10">*</Text>
             </XStack>
@@ -168,7 +168,7 @@ export default function AddRecipeScreen() {
                 fontWeight="600" 
                 color="$color"
               >
-                Ingredients
+                Ingredients :
               </Text>
               <Text fontSize="$4" color="$red10">*</Text>
             </XStack>

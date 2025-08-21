@@ -42,7 +42,8 @@ export default function RecipeDetailScreen() {
       style={{ flex: 1 }}
       contentContainerStyle={{ flexGrow: 1 }}
       marginTop={0}
-
+      showsVerticalScrollIndicator={false}
+      
       backgroundColor="$background"
     >
         <Spacer />

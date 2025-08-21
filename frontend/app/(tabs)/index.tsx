@@ -61,7 +61,7 @@ export default function HomeScreen({ toggleTheme }: { toggleTheme: () => void })
       <XStack justifyContent="space-between" alignItems="center" padding="$4" paddingTop={60}>
         <YStack>
           <Text fontSize="$4" color="$color" opacity={0.7}>
-            Hi Chris! 👋
+            Hi Yash! 👋
           </Text>
           <H3 color="$color" fontWeight="600">
             Got a tasty dish in mind?
@@ -93,16 +93,7 @@ export default function HomeScreen({ toggleTheme }: { toggleTheme: () => void })
             clearButtonMode="while-editing"
             selectionColor="$green"
           />
-          <Button
-            position="absolute"
-            right="$1"
-            backgroundColor="$green"
-            color="white"
-            size={20}
-            borderRadius="$2"
-          >
-            ☰
-          </Button>
+         
         </XStack>
       </XStack>
 
